@@ -9,7 +9,7 @@ import CV_KORZENIOWSKI_Kamil from "../assets/CV_KORZENIOWSKI_Kamil.pdf";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[660px] flex flex-col items-center">
-      <div className="md:h-[550px] h-[550px] w-[450px] bg-gradient-to-r absolute from-[#304075] via-[#1420c5] to-[#617cc5] transform rotate-45 z-0 right-2 top-28 rounded-3xl"></div>
+      <div className="md:h-[550px] h-[550px] w-[450px] bg-gradient-to-r absolute from-[#1c253f] via-[#5376d6] to-[#b3657d] transform rotate-45 z-0 right-2 top-28 rounded-3xl"></div>
       <Navbar />
       <main
         id="home"
@@ -20,12 +20,12 @@ export default function Hero() {
           data-aos="fade-up"
           data-aos-delay="500"
         >
-          <div className="absolute -z-10 w-60 h-60 bg-[#3d78f7] rounded-full blur-3xl opacity-50 -top-5 -left-12"></div>
+          <div className="absolute -z-10 w-60 h-60 bg-[#82a6f5] rounded-full blur-3xl opacity-50 -top-5 -left-12"></div>
           <header>
             <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Kamil KORZENIOWSKI
             </h1>
-            <h2 className="text-xl sm:text-4xl md:text2xl font-bold text-[#180f4a] md:text-[#5a76f3] mb-2">
+            <h2 className="text-xl sm:text-4xl md:text2xl font-bold text-[#180f4a] md:text-[#6088f5] mb-2">
               Frontend Developer
             </h2>
           </header>
@@ -37,19 +37,19 @@ export default function Hero() {
           </p>
           <div className="flex items-center space-x-4 mb-6">
             <a href="#">
-              <img src={github} alt="GitHub" className="w-11 h-11" />
+              <img src={instagram} alt="Instagram" className="w-11 h-11" />
             </a>
             <a href="#">
               <img src={linkedin} alt="LinkedIn" className="w-11 h-11" />
             </a>
             <a href="#">
-              <img src={instagram} alt="Instagram" className="w-11 h-11" />
+              <img src={github} alt="GitHub" className="w-11 h-11" />
             </a>
           </div>
           <a href={CV_KORZENIOWSKI_Kamil} download>
             <button
-              className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#1b289c] 
-            hover:shadow-[0_0_40px_rgba(128,0,128,0.7)] rounded-full text-lg"
+              className="inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#1d3c91] 
+            hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
             >
               Download CV
             </button>
