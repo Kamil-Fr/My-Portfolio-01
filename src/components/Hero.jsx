@@ -13,7 +13,7 @@ export default function Hero() {
       <Navbar />
       <main
         id="home"
-        className="flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-52 pb-4 md:pb-24 md:pt-32 pt-24 mt-14 md:mt-0 z-10"
+        className="flex flex-col md:flex-row items-center justify-center w-full px-4 md:px-52 pb-4 md:pb-32 md:pt-32 pt-24 mt-14 md:mt-0 z-10"
       >
         <section
           className="flex-1 mr-28 ml-12 md:text-left mt-10 md:mt-0 relative"
