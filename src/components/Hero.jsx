@@ -36,13 +36,13 @@ export default function Hero() {
             enim doloribus!
           </p>
           <div className="flex items-center space-x-4 mb-6">
-            <a href="#">
+            <a href="https://www.instagram.com/douce.france.par.camille?igsh=cXE1d2xmYzAyMDRt">
               <img src={instagram} alt="Instagram" className="w-11 h-11" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/kamil-korzeniowski-fr/">
               <img src={linkedin} alt="LinkedIn" className="w-11 h-11" />
             </a>
-            <a href="#">
+            <a href="https://github.com/Kamil-Fr">
               <img src={github} alt="GitHub" className="w-11 h-11" />
             </a>
           </div>
