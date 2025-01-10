@@ -66,7 +66,7 @@ export default function Projects() {
     },
   ];
   return (
-    <main className="p-4">
+    <main id="projects" className="p-4">
       <section data-aos="fade-up" data-aos-delay="300">
         <header className="text-center">
           <h1 className="text-3xl text-white sm:text-4xl font-bold mb-6">

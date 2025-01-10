@@ -79,7 +79,10 @@ const SkillBoxOthers = ({ title, description }) => (
 
 export default function Skills() {
   return (
-    <section className="relative min-h-screen overflow-hidden flex flex-col items-center text-white px-4 py-10">
+    <section
+      id="skills"
+      className="relative min-h-screen overflow-hidden flex flex-col items-center text-white px-4 py-10"
+    >
       <div
         className="absolute z-0 w-72 h-36 sm:w-96 sm:h-44 bg-[#3c6df5] rounded-full blur-3xl opacity-50 top-20 sm:top-28 
       left-1/2 transform -translate-x-1/2"

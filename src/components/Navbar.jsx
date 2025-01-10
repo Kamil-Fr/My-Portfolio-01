@@ -34,7 +34,7 @@ export default function Navbar() {
           {NavbarLinks.map((link) => (
             <a
               key={link.id}
-              href={link.linlk}
+              href={link.link}
               className="hover:text-gray-200 text-lg"
             >
               {link.name}
@@ -63,7 +63,7 @@ export default function Navbar() {
         {NavbarLinks.map((link) => (
           <a
             key={link.id}
-            href={link.linlk}
+            href={link.link}
             className="text-lg text-white hover:text-gray-200"
           >
             {link.name}
