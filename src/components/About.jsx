@@ -17,7 +17,7 @@ export default function About() {
         >
           <div
             className="h-[200px] sm:h-[300px] w-[300px] sm:w-[400px] lg:h-[300px] lg:w-[500px] bg-gradient-to-l 
-         from-[#b3657d] via-[#5376d6] to-[#1c253f] absolute transform rotate-12 z-0 right-5 -top-2 md:top-10 rounded-full"
+         from-[#f14c4c] via-[#5376d6] to-[#1c253f] absolute transform rotate-12 z-0 right-5 -top-2 md:top-10 rounded-full"
           ></div>
           <img
             src={developer}

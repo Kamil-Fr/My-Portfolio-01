@@ -9,7 +9,7 @@ import CV_KORZENIOWSKI_Kamil from "../assets/CV_KORZENIOWSKI_Kamil.pdf";
 export default function Hero() {
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[660px] flex flex-col items-center">
-      <div className="md:h-[550px] h-[550px] w-[450px] bg-gradient-to-r absolute from-[#1c253f] via-[#5376d6] to-[#b3657d] transform rotate-45 z-0 right-2 top-28 rounded-3xl"></div>
+      <div className="md:h-[550px] h-[550px] w-[450px] bg-gradient-to-r absolute from-[#1c253f] via-[#5376d6] to-[#f14c4c] transform rotate-45 z-0 right-2 top-28 rounded-3xl"></div>
       <Navbar />
       <main
         id="home"
