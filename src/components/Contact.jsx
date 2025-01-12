@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import imghero from "../assets/images/imghero.png";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <section
       data-aos="fade-up"
@@ -22,14 +57,14 @@ export default function Contact() {
           />
         </aside>
 
-        {/*Contact Form*/}
-        <section className="p-8 w-full md:w-1/2">
+        {/* Contact Form */}
+        <section id="contact" className="p-8 w-full md:w-1/2">
           <header className="mb-6">
             <h2 className="text-4xl font-bold text-center text-white">
               Contact Me
             </h2>
           </header>
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
@@ -41,8 +76,11 @@ export default function Contact() {
                 type="text"
                 name="name"
                 id="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your name"
                 className="w-full px-4 py-2 text-white bg-gray-900 rounded-lg focus:outline-none"
+                required
               />
             </div>
             <div>
@@ -56,13 +94,16 @@ export default function Contact() {
                 type="email"
                 name="email"
                 id="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your e-mail"
                 className="w-full px-4 py-2 text-white bg-gray-900 rounded-lg focus:outline-none"
+                required
               />
             </div>
             <div>
               <label
-                htmlFor="Message"
+                htmlFor="message"
                 className="block text-gray-300 font-medium mb-2"
               >
                 Message
@@ -70,16 +111,21 @@ export default function Contact() {
               <textarea
                 name="message"
                 id="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your message"
                 className="w-full px-4 py-2 text-white bg-gray-900 rounded-lg focus:outline-none"
+                required
               ></textarea>
             </div>
             <button
+              type="submit"
               className="w-full text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#1d3c91] 
-            hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
+              hover:shadow-[0_0_40px_rgba(100,149,237,0.7)] rounded-full text-lg"
             >
               Send Message
             </button>
+            {status && <p className="text-white mt-4">{status}</p>}
           </form>
         </section>
       </article>
