@@ -43,25 +43,27 @@ export default function Projects() {
     {
       image: project1,
       title: "Loan",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description:
+        "A landing page for a loan website inspired by a Renato Stefani Filgueiras layout.",
       link: "https://github.com/Kamil-Fr/Loans_landing_page",
     },
     {
       image: project2,
       title: "Give it to good hands",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description:
+        "A website for making in-kind donations to associations in need.",
       link: "https://kamil-fr.github.io/give_it_to_good_hands/",
     },
     {
       image: project3,
       title: "Paris",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "A website that helps you plan a tourist trip to Paris.",
       link: "https://kamil-fr.github.io/paris/",
     },
     {
       image: project4,
       title: "Vidoo",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      description: "Video sharing app.",
       link: "https://github.com/Kamil-Fr/Vidoo",
     },
   ];

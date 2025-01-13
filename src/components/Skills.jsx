@@ -9,25 +9,29 @@ const skillsData = [
     id: 1,
     image: react,
     title: "React JS",
-    description: "Lorem ipsum dolor sit amet.",
+    description:
+      "I learned React JS to build modern, dynamic web applications and to simplify the process of managing complex UI components efficiently.",
   },
   {
     id: 2,
     image: tailwindcss,
     title: "Tailwind CSS",
-    description: "Lorem ipsum dolor sit amet.",
+    description:
+      "I adopted Tailwind CSS to streamline the design process and create consistent, responsive interfaces with minimal custom CSS.",
   },
   {
     id: 3,
     image: react,
     title: "React Native",
-    description: "Lorem ipsum dolor sit amet.",
+    description:
+      "I picked up React Native to create cross-platform mobile apps, allowing me to reach both iOS and Android users with a single codebase.",
   },
   {
     id: 4,
     image: nodejs,
     title: "Node JS",
-    description: "Lorem ipsum dolor sit amet.",
+    description:
+      "I chose to learn Node.js to gain the ability to build full-stack applications and handle backend operations with a lightweight, efficient runtime.",
   },
 ];
 const skillsDataOthers = [
