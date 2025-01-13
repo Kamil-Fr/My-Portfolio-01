@@ -30,10 +30,14 @@ export default function Hero() {
             </h2>
           </header>
           <p className="text-base sm:text-lg md:text-lg text-gray-200 mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            minima eum, exercitationem consequatur, qui illum quae reiciendis
-            dignissimos ut eaque beatae, necessitatibus ipsam corporis eos nihil
-            enim doloribus!
+            Hi! I’m a budding frontend developer passionate about crafting
+            beautiful and functional web experiences. As a beginner, I’m
+            continuously learning and growing, eager to tackle exciting
+            challenges in the world of web development.
+          </p>
+          <p className="text-base sm:text-lg md:text-lg text-gray-200 mb-6">
+            Feel free to explore my projects, learn about my journey, and get in
+            touch. Let’s build something amazing together!
           </p>
           <div className="flex items-center space-x-4 mb-6">
             <a href="https://www.instagram.com/douce.france.par.camille?igsh=cXE1d2xmYzAyMDRt">

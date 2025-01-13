@@ -102,10 +102,8 @@ export default function Skills() {
             My Experise <br /> and <span className="text-blue-400">Skills</span>
           </h1>
           <p className="text-gray-400 mt-2 sm:mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum,
-            aperiam eos nemo dicta commodi eveniet <br /> ipsa laudantium
-            eligendi voluptates qui quo eaque laboriosam optio! Accusamus
-            consequuntur quas totam placeat vero.
+            Here you can find more details about my current programming and
+            technology skills.
           </p>
         </header>
         <section

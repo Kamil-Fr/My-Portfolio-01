@@ -68,13 +68,17 @@ export default function Projects() {
   return (
     <main id="projects" className="p-4">
       <section data-aos="fade-up" data-aos-delay="300">
+        <div
+          className="absolute z-0 w-40 h-40 sm:w-60 sm:h-60 bg-[#3c6df5]  rounded-full blur-3xl opacity-50 op-20 sm:top-15 
+      left-1/2 transform -translate-x-1/2"
+        ></div>
+
         <header className="text-center">
           <h1 className="text-3xl text-white sm:text-4xl font-bold mb-6">
             My <span className="text-blue-400">Projects</span>
           </h1>
           <p className="text-gray-400 mt-2 sm:mt-4 text-sm sm:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est vero
-            sint debitis distinctio dolorum dicta molestias quam.
+            A collection of projects I've worked on.
           </p>
         </header>
       </section>
