@@ -156,7 +156,7 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const response = await fetch(`${process.env.VITE_API_URL}/send-email`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
