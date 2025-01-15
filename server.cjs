@@ -18,19 +18,19 @@ app.post("/send-email", async (req, res) => {
   }
 
   try {
-     const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
-      secure: false, 
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, 
-        pass: process.env.EMAIL_PASS, 
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-      const mailOptions = {
+    const mailOptions = {
       from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_TO, 
+      to: process.env.EMAIL_TO,
       subject: `Nowa wiadomość od ${name}`,
       text: message,
       html: `<p><strong>Imię:</strong> ${name}</p>
@@ -39,7 +39,7 @@ app.post("/send-email", async (req, res) => {
              <p>${message}</p>`,
     };
 
-       await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
     console.error(error);
@@ -49,4 +49,12 @@ app.post("/send-email", async (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
