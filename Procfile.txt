@@ -1,1 +1,2 @@
-web: vite preview
+web: node server.cjs
+
