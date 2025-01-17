@@ -13,31 +13,72 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "dist"))); // Obsługa plików statycznych
 
-// Endpoint do obsługi wysyłania e-maili
+// // Endpoint do obsługi wysyłania e-maili
+// app.post("/send-email", async (req, res) => {
+//   const { name, email, message } = req.body;
+
+//   // Walidacja danych wejściowych
+//   if (!name || !email || !message) {
+//     return res.status(400).json({ error: "All fields are required." });
+//   }
+
+//   try {
+//     // Konfiguracja transportera nodemailer
+//     const transporter = nodemailer.createTransport({
+//       host: "smtp.gmail.com",
+//       port: 587,
+//       secure: false, // Użyj TLS
+//       auth: {
+//         user: process.env.EMAIL_USER, // Twój e-mail
+//         pass: process.env.EMAIL_PASS, // Twoje hasło aplikacji
+//       },
+//     });
+
+//     // Opcje e-maila
+//     const mailOptions = {
+//       from: `"${name}" <${email}>`,
+//       to: process.env.EMAIL_TO, // Odbiorca
+//       subject: `Nowa wiadomość od ${name}`,
+//       text: message,
+//       html: `<p><strong>Imię:</strong> ${name}</p>
+//              <p><strong>Email:</strong> ${email}</p>
+//              <p><strong>Wiadomość:</strong></p>
+//              <p>${message}</p>`,
+//     };
+
+//     // Wysyłanie e-maila
+//     await transporter.sendMail(mailOptions);
+//     res.status(200).json({ message: "Email sent successfully!" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Failed to send email. Try again later." });
+//   }
+// });
 app.post("/send-email", async (req, res) => {
+  console.log("Otrzymano żądanie POST na /send-email");
+  console.log("Body żądania:", req.body);
+
   const { name, email, message } = req.body;
 
-  // Walidacja danych wejściowych
   if (!name || !email || !message) {
+    console.error("Niekompletne dane wejściowe:", { name, email, message });
     return res.status(400).json({ error: "All fields are required." });
   }
 
   try {
-    // Konfiguracja transportera nodemailer
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
-      secure: false, // Użyj TLS
+      secure: false,
       auth: {
-        user: process.env.EMAIL_USER, // Twój e-mail
-        pass: process.env.EMAIL_PASS, // Twoje hasło aplikacji
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Opcje e-maila
     const mailOptions = {
       from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_TO, // Odbiorca
+      to: process.env.EMAIL_TO,
       subject: `Nowa wiadomość od ${name}`,
       text: message,
       html: `<p><strong>Imię:</strong> ${name}</p>
@@ -46,11 +87,11 @@ app.post("/send-email", async (req, res) => {
              <p>${message}</p>`,
     };
 
-    // Wysyłanie e-maila
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log("E-mail wysłany:", info.response);
     res.status(200).json({ message: "Email sent successfully!" });
   } catch (error) {
-    console.error(error);
+    console.error("Błąd wysyłania e-maila:", error);
     res.status(500).json({ error: "Failed to send email. Try again later." });
   }
 });
