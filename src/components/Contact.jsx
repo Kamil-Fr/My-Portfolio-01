@@ -19,7 +19,7 @@
 //     setStatus("Sending...");
 
 //     try {
-//       const response = await fetch("http://localhost:5000/send-email", {
+//       const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(formData),
@@ -29,7 +29,8 @@
 //         setStatus("Message sent successfully!");
 //         setFormData({ name: "", email: "", message: "" });
 //       } else {
-//         setStatus("Failed to send message. Please try again.");
+//         const errorData = await response.json();
+//         setStatus(`Error: ${errorData.error || "Unknown error occurred"}`);
 //       }
 //     } catch (error) {
 //       console.error(error);
@@ -47,7 +48,7 @@
 //         <aside className="w-full md:w-1/2 relative">
 //           <div
 //             className="absolute z-0 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px]
-//             sm:w-[400px] h-[300px] sm:h-[#400px] rounded-full bg-gradient-to-r from-[#97284d] via-[#f56c6c] to-[#3a55a5] 
+//             sm:w-[400px] h-[300px] sm:h-[400px] rounded-full bg-gradient-to-r from-[#97284d] via-[#f56c6c] to-[#3a55a5] 
 //             shadow-[0_0_70px_rgba(100,149,237,0.7)]"
 //           ></div>
 //           <img
@@ -133,8 +134,6 @@
 //   );
 // }
 
-
-
 import React, { useState } from "react";
 import imghero from "../assets/images/imghero.png";
 
@@ -156,6 +155,7 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
+      // Wysyłanie danych formularza na endpoint /send-email
       const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -164,7 +164,7 @@ export default function Contact() {
 
       if (response.ok) {
         setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "" }); // Reset form
       } else {
         const errorData = await response.json();
         setStatus(`Error: ${errorData.error || "Unknown error occurred"}`);
@@ -270,4 +270,3 @@ export default function Contact() {
     </section>
   );
 }
-
