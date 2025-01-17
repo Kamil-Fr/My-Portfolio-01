@@ -32,6 +32,7 @@ app.post('/send-email', async (req, res) => {
 
   // Create a transporter for sending the email
   const transporter = nodemailer.createTransport({
+    service: 'gmail',
     host: 'smtp.gmail.com', // You can change the host if you use another provider
     port: 587,
     secure: false, // Use TLS
@@ -67,6 +68,6 @@ app.get('*', (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
