@@ -64,7 +64,8 @@ app.post("/send-email", async (req, res) => {
     console.error("Niekompletne dane wejściowe:", { name, email, message });
     return res.status(400).json({ error: "All fields are required." });
   }
-
+  console.log("Email user:", process.env.EMAIL_USER);
+  console.log("Email pass:", process.env.EMAIL_PASS);
   try {
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -75,6 +76,7 @@ app.post("/send-email", async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
+
 
     const mailOptions = {
       from: `"${name}" <${email}>`,
