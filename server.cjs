@@ -72,3 +72,30 @@
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
+// const nodemailer = require('nodemailer');
+// require('dotenv').config();
+
+// async function testEmail() {
+//     const transporter = nodemailer.createTransport({
+//         service: "gmail",
+//         auth: {
+//             user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+//             pass: process.env.EMAIL_PASS,
+//         },
+//         debug: true,
+//     });
+
+//     try {
+//         await transporter.sendMail({
+//             from: process.env.EMAIL_USER,
+//             to: process.env.EMAIL_USER,
+//             subject: "Test Email",
+//             text: "This is a test email.",
+//         });
+//         console.log("Email sent successfully!");
+//     } catch (error) {
+//         console.error("Error sending email:", error);
+//     }
+// }
+
+// testEmail();
