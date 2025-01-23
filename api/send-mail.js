@@ -1,22 +1,21 @@
-require('dotenv').config(); // To musi być na samym początku!
-console.log("Plik .env załadowany");
-if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_TO) {
-    throw new Error("Zmienne środowiskowe nie są ustawione lub plik .env nie jest prawidłowy!");
-}
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-console.log("EMAIL_TO:", process.env.EMAIL_TO);
+import nodemailer from "nodemailer";
 
-import nodemailer from 'nodemailer';
-
+// Ustawienie nagłówków CORS
 export default async function handler(req, res) {
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-    console.log("EMAIL_TO:", process.env.EMAIL_TO);
     // Obsługa metod innych niż POST
     if (req.method !== 'POST') {
         res.setHeader('Allow', ['POST']);
         return res.status(405).json({ error: `Method ${req.method} not allowed.` });
+    }
+
+    // Dodanie nagłówków CORS
+    res.setHeader("Access-Control-Allow-Origin", "*"); // Pozwól na żądania z każdej domeny
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS"); // Dozwolone metody
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Dozwolone nagłówki
+
+    // Obsługa preflight request (OPTIONS)
+    if (req.method === "OPTIONS") {
+        return res.status(200).end(); // W odpowiedzi na preflight request
     }
 
     const { name, email, message } = req.body;
