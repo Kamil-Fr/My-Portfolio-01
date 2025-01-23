@@ -19,22 +19,24 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/send-email`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
       } else {
         const errorData = await response.json();
-        setStatus(`Error: ${errorData.error || "Unknown error occurred"}`);
+        setStatus(`Error: ${errorData.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error(error);
-      setStatus("An error occurred. Please try again.");
+      setStatus('An error occurred. Please try again.');
     }
   };
 

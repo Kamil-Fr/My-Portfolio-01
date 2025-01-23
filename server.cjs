@@ -72,30 +72,81 @@
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
-const nodemailer = require('nodemailer');
-require('dotenv').config();
+// const nodemailer = require('nodemailer');
+// require('dotenv').config();
 
-async function testEmail() {
-    const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
-            pass: process.env.EMAIL_PASS,
-        },
-        debug: true,
-    });
+// async function sendEmail() {
+//     const transporter = nodemailer.createTransport({
+//         service: "gmail",
+//         auth: {
+//             user: process.env.EMAIL_USER, // Your email (e.g., Gmail)
+//             pass: process.env.EMAIL_PASS,
+//         },
+//         debug: true,
+//     });
+
+//     try {
+//         await transporter.sendMail({
+//             from: process.env.EMAIL_USER,
+//             to: process.env.EMAIL_USER,
+//             subject: "Test Email",
+//             text: "This is a test email.",
+//         });
+//         console.log("Email sent successfully!");
+//     } catch (error) {
+//         console.error("Error sending email:", error);
+//     }
+// }
+
+// sendEmail();
+
+
+
+
+
+const express = require('express');
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+// Middleware do parsowania JSON
+app.use(bodyParser.json());
+
+// Tworzenie transportera do wysyłania emaili
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER, // Twoje konto Gmail
+        pass: process.env.EMAIL_PASS, // Hasło aplikacji lub hasło konta
+    },
+});
+
+// Endpoint do obsługi formularza
+app.post('/send-email', async (req, res) => {
+    const { name, email, message } = req.body;
 
     try {
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER,
-            subject: "Test Email",
-            text: "This is a test email.",
+            to: process.env.EMAIL_USER, // Na ten adres wyślesz wiadomość
+            subject: `New message from ${name}`,
+            text: `You have a new message from ${name} (${email}):\n\n${message}`,
         });
-        console.log("Email sent successfully!");
-    } catch (error) {
-        console.error("Error sending email:", error);
-    }
-}
 
-testEmail();
+        res.status(200).json({ message: 'Email sent successfully!' });
+    } catch (error) {
+        console.error('Error sending email:', error);
+        res.status(500).json({ error: 'An error occurred while sending the email.' });
+    }
+});
+
+// Uruchomienie serwera
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
