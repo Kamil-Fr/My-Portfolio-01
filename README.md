@@ -15,7 +15,6 @@ Check out the live version of my portfolio: [https://korzeniowski-portfolio.verc
 
 - **Backend:**
   - Node.js
-  - Express
 
 - **Deployment:**
   - Vercel
