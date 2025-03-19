@@ -77,7 +77,7 @@ export default function Projects() {
     {
       image: project6,
       title: "To-Do List",
-      description: "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed. You can also set due dates for tasks and switch between dark and light modes.",
+      description: "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed.",
       link: "https://kamil-fr.github.io/todo-app/",
     },
   ];
