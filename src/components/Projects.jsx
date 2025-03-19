@@ -4,6 +4,7 @@ import project2 from "../assets/images/project2.png";
 import project3 from "../assets/images/project3.png";
 import project4 from "../assets/images/project4.png";
 import project5 from "../assets/images/project5.png";
+import project6 from "../assets/images/project6.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
@@ -72,6 +73,12 @@ export default function Projects() {
       title: "Pearlstore",
       description: "A landing page for an e-commerce website dedicated to selling exquisite pearls and luxury pearl-based products.",
       link: "https://kamil-fr.github.io/Pearlstore/",
+    },
+    {
+      image: project6,
+      title: "To-Do List",
+      description: "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed. You can also set due dates for tasks and switch between dark and light modes.",
+      link: "https://kamil-fr.github.io/todo-app/",
     },
   ];
   return (
