@@ -80,6 +80,12 @@ export default function Projects() {
       description: "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed.",
       link: "https://kamil-fr.github.io/todo-app/",
     },
+    {
+      image: project7,
+      title: "Movie App",
+      description: "An application with an API for retrieving and displaying data and covering all the important React components and features.",
+      link: "https://github.com/Kamil-Fr/Movie-Tutorial",
+    },
   ];
   return (
     <main id="projects" className="p-4">
