@@ -87,6 +87,12 @@ export default function Projects() {
       description: "An application with an API for retrieving and displaying data and covering all the important React components and features.",
       link: "https://github.com/Kamil-Fr/Movie-Tutorial",
     },
+    {
+      image: project8,
+      title: "Note App",
+      description: "A simple note-taking application.",
+      link: "https://github.com/Kamil-Fr/note-taking-app",
+    },
   ];
   return (
     <main id="projects" className="p-4">
