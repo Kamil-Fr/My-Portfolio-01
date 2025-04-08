@@ -6,7 +6,7 @@ import project4 from "../assets/images/project4.png";
 import project5 from "../assets/images/project5.png";
 import project6 from "../assets/images/project6.png";
 import project7 from "../assets/images/project7.png";
-import project7 from "../assets/images/project8.png";
+import project8 from "../assets/images/project8.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
