@@ -17,7 +17,7 @@ export default async function handler(req, res) {
             const mailOptions = {
                 from: `"${name}" <${process.env.EMAIL_USER}>`,
                 to: process.env.EMAIL_TO,
-                subject: `Nowa wiadomość od ${name}`,
+                subject: `New message from ${name}`,
                 replyTo: email,
                 text: `
 You have received a new message from the contact form on your website:
