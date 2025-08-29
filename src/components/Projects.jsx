@@ -7,7 +7,7 @@ import project5 from "../assets/images/project5.png";
 import project6 from "../assets/images/project6.png";
 import project7 from "../assets/images/project7.png";
 import project8 from "../assets/images/project8.png";
-import project8 from "../assets/images/project9.png";
+import project9 from "../assets/images/project9.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
@@ -47,7 +47,7 @@ export default function Projects() {
   const listProjects = [
      {
       image: project9,
-      title: "LoWebsite of the DDLille Association",
+      title: "Website of the DDLille Association",
       description:
         "Commercial website project of the Polish-French association.",
       link: "https://www.ddlille.eu/",
