@@ -44,6 +44,13 @@ const ProjectCard = ({ image, title, description, link }) => {
 
 export default function Projects() {
   const listProjects = [
+     {
+      image: project9,
+      title: "LoWebsite of the DDLille Association",
+      description:
+        "Commercial website project of the Polish-French association.",
+      link: "https://www.ddlille.eu/",
+    },
     {
       image: project1,
       title: "Loan",
