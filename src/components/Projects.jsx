@@ -8,6 +8,7 @@ import project6 from "../assets/images/project6.png";
 import project7 from "../assets/images/project7.png";
 import project8 from "../assets/images/project8.png";
 import project9 from "../assets/images/project9.png";
+import project10 from "../assets/images/project10.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
@@ -51,6 +52,13 @@ export default function Projects() {
       description:
         "Commercial website project of the Polish-French association.",
       link: "https://www.ddlille.eu/",
+    },
+     {
+      image: project10,
+      title: "Cognié Paris",
+      description:
+        "A commercial project for the Cognié Paris brand, based on WordPress, in which I support the company in website changes and management.",
+      link: "https://cognie-paris.com/",
     },
     {
       image: project1,
