@@ -48,7 +48,7 @@ export default function Projects() {
   const listProjects = [
      {
       image: project9,
-      title: "Website of the DDLille Association",
+      title: "DDLille",
       description:
         "Commercial website project of the Polish-French association.",
       link: "https://www.ddlille.eu/",
