@@ -51,13 +51,13 @@ const skillsDataOthers = [
 
     title: "Development Tools",
     description:
-      "• GitHub\n• Git\n• Webstorm\n• Visual Studio Code\n• Trello\n• Webpack\n• Babel\n• npm\n• Figma\n",
+      "• GitHub\n• Git\n• Webstorm\n• Visual Studio Code\n• Trello\n• Webpack\n• Babel\n• npm\n• Figma\n• Jira\n• Vercel\n• Postman\n",
   },
   {
     id: 4,
 
     title: "Others",
-    description: "• JSON\n• Rest API\n• Prince2\n• Scrum\n",
+    description: "• JSON\n• Rest API\n• Prince2\n• Scrum\n• Agile\n• Strapi\n",
   },
 ];
 
