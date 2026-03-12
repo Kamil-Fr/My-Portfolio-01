@@ -9,6 +9,7 @@ import project7 from "../assets/images/project7.png";
 import project8 from "../assets/images/project8.png";
 import project9 from "../assets/images/project9.png";
 import project10 from "../assets/images/project10.png";
+import project11 from "../assets/images/project11.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
@@ -59,6 +60,13 @@ export default function Projects() {
       description:
         "A commercial project for the Cognié Paris brand, based on WordPress, in which I support the company in website changes and management.",
       link: "https://cognie-paris.com/",
+    },
+     {
+      image: project11,
+      title: "DevStudio",
+      description:
+        "A responsive landing page for a software development company, built with React, Vite, and Tailwind CSS. It features animated UI components and a modern SaaS-style design.",
+      link: "https://react-landing-ebon-pi.vercel.app/",
     },
     {
       image: project1,
