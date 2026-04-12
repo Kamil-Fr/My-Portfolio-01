@@ -10,6 +10,7 @@ import project8 from "../assets/images/project8.png";
 import project9 from "../assets/images/project9.png";
 import project10 from "../assets/images/project10.png";
 import project11 from "../assets/images/project11.png";
+import project12 from "../assets/images/project12.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
   return (
@@ -67,6 +68,13 @@ export default function Projects() {
       description:
         "A responsive landing page for a software development company, built with React, Vite, and Tailwind CSS. It features animated UI components and a modern SaaS-style design.",
       link: "https://react-landing-ebon-pi.vercel.app/",
+    },
+     {
+      image: project12,
+      title: "To do List Metasense",
+      description:
+        "To-Do List en JavaScript pur avec gestion des tâches, filtres, tri, notifications et dark mode. Projet de test technique pour démontrer la maîtrise du JS et du DOM.",
+      link: "https://github.com/Kamil-Fr/TodoList_Metasense",
     },
     {
       image: project1,
