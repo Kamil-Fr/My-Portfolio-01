@@ -11,11 +11,24 @@ import project9 from "../assets/images/project9.png";
 import project10 from "../assets/images/project10.png";
 import project11 from "../assets/images/project11.png";
 import project12 from "../assets/images/project12.png";
+import project13 from "../assets/images/project13.png";
 
 const ProjectCard = ({ image, title, description, link }) => {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const maxLength = 140;
+
+  const shouldTruncate = description.length > maxLength;
+
+  const displayedText =
+    expanded || !shouldTruncate
+      ? description
+      : description.slice(0, maxLength) + "...";
+
   return (
     <article className="relative max-w-sm bg-gray-800 rounded overflow-hidden shadow-lg group">
       <div className="absolute z-0 w-40 h-40 sm:w-60 sm:h-60 bg-[#3c7df5] rounded-full blur-3xl opacity-50 -top-5 left-10"></div>
+
       <div className="relative z-10">
         <figure className="relative">
           <img
@@ -23,23 +36,41 @@ const ProjectCard = ({ image, title, description, link }) => {
             alt={title}
             className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
           />
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute h-[202px] inset-0 flex items-center justify-center bg-blue-500 bg-opacity-50 opacity-0
-            group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <button className="bg-white font-medium text-black py-2 px-4 rounded-3xl shadow hover:text-white hover:bg-[#2879d5]">
-              Live Preview
-            </button>
-          </a>
+
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute h-[202px] inset-0 flex items-center justify-center bg-blue-500 bg-opacity-50 opacity-0
+              group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <button className="bg-white font-medium text-black py-2 px-4 rounded-3xl shadow hover:text-white hover:bg-[#2879d5]">
+                Live Preview
+              </button>
+            </a>
+          )}
         </figure>
+
         <div className="px-6 py-4">
           <header>
-            <h3 className="text-white font-bold text-xl mb-2">{title}</h3>
+            <h3 className="text-white font-bold text-xl mb-2">
+              {title}
+            </h3>
           </header>
-          <p className="text-gray-200 text-base">{description}</p>
+
+          <p className="text-gray-200 text-base">
+            {displayedText}
+          </p>
+
+          {shouldTruncate && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-3 text-blue-400 hover:text-blue-300 text-sm font-medium"
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          )}
         </div>
       </div>
     </article>
@@ -48,28 +79,35 @@ const ProjectCard = ({ image, title, description, link }) => {
 
 export default function Projects() {
   const listProjects = [
-     {
+    {
       image: project9,
       title: "DDLille",
       description:
         "Commercial website project of the Polish-French association.",
       link: "https://www.ddlille.eu/",
     },
-     {
+    {
+      image: project13,
+      title: "AiEthiq",
+      description:
+        "I worked on the AiEthiq project at AIDRE Consulting — a structured compliance assessment platform based on the EU AI Act 2024/1689. The project focused on developing a system that evaluates AI solutions across 8 key trustworthiness dimensions, including human oversight, transparency, data privacy, accountability, and risk management. The platform enables organisations to assess the compliance level of their AI systems and generate actionable compliance reports aligned with the requirements of the EU AI Act 2024/1689.",
+      //link: "",
+    },
+    {
       image: project10,
       title: "Cognié Paris",
       description:
         "A commercial project for the Cognié Paris brand, based on WordPress, in which I support the company in website changes and management.",
       link: "https://cognie-paris.com/",
     },
-     {
+    {
       image: project11,
       title: "DevStudio",
       description:
         "A responsive landing page for a software development company, built with React, Vite, and Tailwind CSS. It features animated UI components and a modern SaaS-style design.",
       link: "https://react-landing-ebon-pi.vercel.app/",
     },
-     {
+    {
       image: project12,
       title: "To do List Metasense",
       description:
@@ -105,19 +143,22 @@ export default function Projects() {
     {
       image: project5,
       title: "Pearlstore",
-      description: "A landing page for an e-commerce website dedicated to selling exquisite pearls and luxury pearl-based products.",
+      description:
+        "A landing page for an e-commerce website dedicated to selling exquisite pearls and luxury pearl-based products.",
       link: "https://kamil-fr.github.io/Pearlstore/",
     },
     {
       image: project6,
       title: "To-Do List",
-      description: "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed.",
+      description:
+        "The To-Do List is a web application for task management. It allows you to add, edit, delete tasks, as well as mark them as completed.",
       link: "https://kamil-fr.github.io/todo-app/",
     },
     {
       image: project7,
       title: "Movie App",
-      description: "An application with an API for retrieving and displaying data and covering all the important React components and features.",
+      description:
+        "An application with an API for retrieving and displaying data and covering all the important React components and features.",
       link: "https://github.com/Kamil-Fr/Movie-Tutorial",
     },
     {
@@ -162,3 +203,4 @@ export default function Projects() {
     </main>
   );
 }
+
