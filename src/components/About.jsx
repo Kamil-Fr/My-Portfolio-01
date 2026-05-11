@@ -55,14 +55,10 @@ export default function About() {
             </h1>
           </header>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed ">
-            I’m Kamil, a self-motivated and enthusiastic frontend developer with
-            a strong passion for coding and design. My journey into web
-            development began with a curiosity for how websites work and has
-            since grown into a dedication to creating user-friendly and visually
-            appealing digital solutions.
+            I’m Kamil, a legal and technology professional working at the intersection of law, artificial intelligence and frontend development. My background combines expertise in intellectual property, AI regulation and compliance with hands-on experience in building modern web applications and collaborating with technical teams.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-            But before my journey into programming, I was a lawyer.
+            Before moving into technology-focused roles, I built my career as a lawyer specializing in intellectual property and regulatory matters. Today, I combine legal expertise with technical skills to contribute to projects related to AI compliance, legal tech and digital products.
           </p>
           {showMore && (
             <div>
@@ -71,25 +67,16 @@ export default function About() {
               </h2>
               <ul className="list-disc list-inside text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                 <li>
-                  I completed my law studies in Poland, where I then completed
-                  my legal training in Warsaw and became an attorney-at-law.
+                 I completed my law studies in Poland, followed by legal training in Warsaw, becoming an attorney-at-law specializing in intellectual property, new technologies and regulatory matters. I gained professional experience at the Patent Office of the Republic of Poland and later at a law firm, working on projects related to intellectual property, digital services, online businesses and technology law.
                 </li>
                 <li>
-                  I worked at the Patent Office and then at a law firm, where I
-                  specialized in intellectual property (including copyright
-                  law), industrial property (including patents and trademarks)
-                  and the law of new technologies.
+                My growing interest in emerging technologies and artificial intelligence led me to complete postgraduate studies in Law of New Technologies at the Polish Academy of Sciences. Over time, I expanded my professional focus beyond legal advisory into technology and product-oriented work.
                 </li>
                 <li>
-                  Due to my interests, I completed postgraduate studies at the
-                  Polish Academy of Sciences in the field of Law of New
-                  Technologies.
+                 Currently, I combine legal expertise with hands-on experience in frontend development, AI compliance and legal tech projects. I work at the intersection of law, AI and technology, contributing to projects related to AI governance, regulatory analysis and modern web applications.
                 </li>
                 <li>
-                  Among other things, because of my love of France, in December
-                  2022 I decided to move to Paris. After 10 months, I managed to
-                  do it. Due to the change of residence, I decided to change my
-                  profession and chose programming.
+                  After moving to Paris, I continued developing both my legal and technical competencies while working in international and multidisciplinary environments.
                 </li>
               </ul>
 
@@ -98,25 +85,30 @@ export default function About() {
               </h2>
               <ul className="list-disc list-inside text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
                 <li>
-                  Building responsive websites using HTML, CSS, and JavaScript.
+                  Develop modern frontend applications using React, TypeScript and JavaScript.
                 </li>
                 <li>
                   Creating visually appealing designs with attention to detail
                   and usability.
                 </li>
                 <li>
-                  Continuously learning modern frameworks and tools like React
-                  and Tailwind CSS.
+                  Translate legal and regulatory requirements into practical product solutions.
                 </li>
+                <li>
+                  Contribute to AI compliance and legal tech projects.
+                </li>
+                <li>
+                  Work on projects related to AI governance, accessibility (WCAG), data protection and digital products.
+                </li>
+
               </ul>
               <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-                My Mission
+                My Focus
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                I aim to combine creativity and functionality to deliver
-                exceptional user experiences. My current focus is on mastering
-                the fundamentals of frontend development while exploring the
-                best practices of modern web design.
+                My current focus is on combining legal expertise with technology and product development. I am particularly interested in AI compliance, AI governance and legal tech, while further developing my skills in full-stack development, data analysis and modern web technologies.
+
+I enjoy translating complex regulatory requirements into practical digital solutions and collaborating across legal, technical and product teams.
               </p>
               <h3 className="text-xl sm:text-2xl font-semibold mb-4">
                 When I’m not coding, you can find me:
@@ -129,8 +121,7 @@ export default function About() {
                 <li>Enjoying living in Paris.</li>
               </ul>
               <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed">
-                I’m excited to grow as a developer and contribute to impactful
-                projects. Let’s connect and create something great together!
+                I’m particularly interested in projects that combine artificial intelligence, regulation, product thinking and modern technologies to build practical and responsible digital solutions.
               </p>
             </div>
           )}

@@ -26,14 +26,11 @@ export default function Hero() {
               Kamil KORZENIOWSKI
             </h1>
             <h2 className="text-xl sm:text-4xl md:text2xl font-bold text-[#180f4a] md:text-[#6088f5] mb-2">
-              Frontend Developer
+              Legal Engineer | AI Compliance | Frontend Developer
             </h2>
           </header>
           <p className="text-base sm:text-lg md:text-lg text-gray-200 mb-6">
-            Hi! I’m a budding frontend developer passionate about crafting
-            beautiful and functional web experiences. As a beginner, I’m
-            continuously learning and growing, eager to tackle exciting
-            challenges in the world of web development.
+            Hi! I’m a technology lawyer and frontend developer working at the intersection of law, AI and modern web technologies. I combine legal expertise in AI regulation, intellectual property and compliance with hands-on experience in frontend development and product collaboration.
           </p>
           <p className="text-base sm:text-lg md:text-lg text-gray-200 mb-6">
             Feel free to explore my projects, learn about my journey, and get in

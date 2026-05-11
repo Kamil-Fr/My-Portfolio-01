@@ -38,7 +38,7 @@ const skillsDataOthers = [
   {
     id: 1,
     title: "Programming and Markup Languages",
-    description: "• JavaScript\n• HTML5\n• CSS\n• TypeScript (in progress)",
+    description: "• JavaScript\n• HTML5\n• CSS\n• TypeScript \n• SQL (in progress)\n• Python (in progress) \n",
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ const skillsDataOthers = [
     id: 4,
 
     title: "Others",
-    description: "• JSON\n• Rest API\n• Prince2\n• Scrum\n• Agile\n• Strapi\n",
+    description: "• JSON\n• Rest API\n• Prince2\n• Scrum\n• Agile\n• Strapi\n•Power BI\n• MS Excel\n",
   },
 ];
 
